@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/mainBar"
+        layout="@layout/toolbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContents"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_weight="1"
+        android:padding="@dimen/_10sdp">
+
+
+        <ImageView
+            android:id="@+id/imgThumbnails"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:elevation="@dimen/_10sdp"
+            android:src="@drawable/radio_pressed"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancel"
+            android:src="@drawable/ic_play"
+            android:translationZ="90dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/imgThumbnails"
+            app:layout_constraintEnd_toEndOf="@+id/imgThumbnails"
+            app:layout_constraintStart_toStartOf="@+id/imgThumbnails"
+            app:layout_constraintTop_toTopOf="@+id/imgThumbnails" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_progress"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:elevation="10dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrignalSize"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="animation_loading.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab"
+            android:text="0%"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_16sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/animation_progress"
+            app:layout_constraintEnd_toEndOf="@+id/animation_progress"
+            app:layout_constraintStart_toStartOf="@+id/animation_progress"
+            app:layout_constraintTop_toTopOf="@+id/animation_progress" />
+
+        <TextView
+            android:id="@+id/tvOrignalSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_slab"
+            android:text="TextView"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_14sdp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/animation_progress"
+            app:layout_constraintHorizontal_bias="0.23"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgThumbnails" />
+
+
+        <ImageButton
+            android:id="@+id/btnCancelVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/cancel"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/imgThumbnails"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgThumbnails"
+            app:layout_constraintTop_toTopOf="@+id/imgThumbnails"
+            app:layout_constraintVertical_bias="0.00999999" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_13sdp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnSelectFile"
+            style="@style/ButtonsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_file"
+            android:visibility="visible"
+            tools:ignore="DuplicateClickableBoundsCheck" />
+
+
+        <Button
+            android:id="@+id/btnCancel"
+            style="@style/ButtonsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnStartCompress"
+            style="@style/ButtonsStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_compress"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+</LinearLayout>

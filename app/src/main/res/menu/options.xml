@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group
+        android:checkableBehavior="single"
+        android:enabled="true"
+        android:visible="true">
+
+        <item
+            android:id="@+id/mOption"
+            android:checkable="false"
+            android:title="Themes"
+            android:titleCondensed="Themes"
+            tools:ignore="HardcodedText">
+            <menu>
+                <item
+                    android:id="@+id/darkOn"
+                    android:checkable="true"
+                    android:title="Dark Mode" />
+                <item
+                    android:id="@+id/darkOFF"
+                    android:checkable="true"
+                    android:title="Light Mode"
+                    tools:ignore="HardcodedText" />
+            </menu>
+        </item>
+
+    </group>
+
+
+</menu>

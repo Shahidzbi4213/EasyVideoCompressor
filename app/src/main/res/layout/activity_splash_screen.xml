@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen">
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:elevation="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26999998"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="splash_loading.json"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:id="@+id/nameOfApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:elevation="@dimen/_10sdp"
+        android:fontFamily="@font/galindo"
+        android:text="@string/app_name"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="@dimen/_18sdp"
+        app:layout_constraintEnd_toEndOf="@+id/animation_view"
+        app:layout_constraintStart_toStartOf="@+id/animation_view"
+        app:layout_constraintTop_toBottomOf="@+id/animation_view" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/roboto_slab"
+        android:gravity="center"
+        android:text="@string/head_note"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@+id/nameOfApp"
+        app:layout_constraintStart_toStartOf="@+id/nameOfApp"
+        app:layout_constraintTop_toBottomOf="@+id/nameOfApp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
